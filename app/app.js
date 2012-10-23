@@ -15,7 +15,7 @@ var db = new mongo.Db("test", mongoServer, {auto_reconnect:true});
 app.get("/", function(req, res){
     var html = '<div id="content" data-stack="node" data-appname="' + process.env['DOTCLOUD_PROJECT'] + '">';
     html += 'Hello World, from Express!';
-    html += '<script type="text/javascript" src="http://newapp-3on.dotcloud.com/inject.min.js"></script>';
+    html += '<script type="text/javascript" src="https://helloapp.dotcloud.com/inject.min.js"></script>';
 
     res.send(html);
 });
