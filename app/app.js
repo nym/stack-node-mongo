@@ -13,8 +13,10 @@ var mongoServer = new mongo.Server(host, port, {});
 var db = new mongo.Db("test", mongoServer, {auto_reconnect:true});
 
 app.get("/", function(req, res){
-    //app.db.find()
-    res.send("Hello World!");
+    var html = '<div id="content" data-stack="node" data-appname="nodemongo">Hello World, from Express!';
+    html += '<script type="text/javascript" src="http://newapp-3on.dotcloud.com/inject.min.js"></script>';
+
+    res.send(html);
 });
 
 db.open(function(err, db){
