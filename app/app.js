@@ -12,7 +12,7 @@ var user = process.env['DOTCLOUD_DB_MONGODB_LOGIN'] || undefined;
 var pass = process.env['DOTCLOUD_DB_MONGODB_PASSWORD'] || undefined;
 
 var mongoServer = new mongo.Server(host, port, {});
-var db = new mongo.Db("test", mongoServer, {auto_reconnect:true});
+var db = new mongo.Db("test", mongoServer, {auto_reconnect:true,w:'majority'});
 
 app.get("/", function(req, res){
     var html = '<div id="content" data-stack="node" data-appname="' + process.env['DOTCLOUD_PROJECT'] + '">';
