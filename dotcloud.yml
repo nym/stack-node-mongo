@@ -1,3 +1,10 @@
+memcached:
+  type: custom
+  process: memcached -p 111123
+  systempackages: 
+    - memcached
+  ports:
+    memcached: tcp
 www:
     type: nodejs
     approot: app
